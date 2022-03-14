@@ -7,7 +7,7 @@ public class Boggle {
         setup();
     }
 
-    private void setup()
+    public void setup()
     {
         Scanner scanner = new Scanner(System.in);
 
