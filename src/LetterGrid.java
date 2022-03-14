@@ -1,28 +1,24 @@
 public class LetterGrid {
     private Space[][] spaces;
     private int boardSize;
-        static int MAX = 26;
+    static int MAX = 26;
 
-    public LetterGrid(int size)
-    {
+    public LetterGrid(int size) {
 
         spaces = new Space[size][size];
 
-        for (int row = 0; row < spaces.length; row++)
-        {
-            for (int col = 0; col < spaces[0].length; col++)
-            {
+        for (int row = 0; row < spaces.length; row++) {
+            for (int col = 0; col < spaces[0].length; col++) {
                 spaces[row][col] = new Space();
             }
         }
     }
 
-    public String randAlp(int n)
-    {
-        char []alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g',
+    public String randAlp(int n) {
+        char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
                 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                 'o', 'p', 'q', 'r', 's', 't', 'u',
-                'v', 'w', 'x', 'y', 'z' };
+                'v', 'w', 'x', 'y', 'z'};
 
         String res = "";
         for (int i = 0; i < n; i++)
@@ -31,8 +27,24 @@ public class LetterGrid {
         return res;
     }
 
-    public void drawBoard()
-    {
+    public void drawBoard() {
+        System.out.println();
+
+        int spaceNum = 0;
+
+        // draw the grid row by row, column by column
+        for (int row = 0; row < spaces.length; row++) {
+            for (int col = 0; col < spaces[0].length; col++) {
+                spaceNum++;
+
+                Space space = spaces[row][col];
+                if (space.getSymbol() == Space.BLANK) {
+                    spaces[row][col]=(randAlp(10));
+                }
+                System.out.print("|");
+            }
+            System.out.println();
+        }
 
     }
 }

@@ -9,12 +9,7 @@ public class Boggle {
 
     public void setup()
     {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("What size board? (3, 4, 5, or 6): ");
-        int boardSize = scanner.nextInt();
-
-        board = new LetterGrid(boardSize);
+        board = new LetterGrid(4);
 
         // draws the board as part of setup
         board.drawBoard();
