@@ -25,6 +25,7 @@ public class LetterGrid {
                 int number = (int) (Math.random() * 26) + 65;  //just move this line
                 table[r][c] = (char) number;
                 System.out.print(table[r][c] + " ");
+                System.out.print("| ");
             }//inner for loop
             System.out.println();
         }//outer for loop
