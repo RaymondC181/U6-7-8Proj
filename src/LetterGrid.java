@@ -1,51 +1,38 @@
 public class LetterGrid {
     private Space[][] spaces;
     private int boardSize;
-    static int MAX = 26;
 
     public LetterGrid(int size) {
 
         spaces = new Space[size][size];
 
-        for (int row = 0; row < spaces.length; row++) {
-            for (int col = 0; col < spaces[0].length; col++) {
+        for (int row = 0; row < spaces.length; row++)
+        {
+            for (int col = 0; col < spaces[0].length; col++)
+            {
                 spaces[row][col] = new Space();
             }
         }
     }
 
-    public String randAlp(int n) {
-        char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
-                'h', 'i', 'j', 'k', 'l', 'm', 'n',
-                'o', 'p', 'q', 'r', 's', 't', 'u',
-                'v', 'w', 'x', 'y', 'z'};
-
-        String res = "";
-        for (int i = 0; i < n; i++)
-            res = res + alphabet[(int) (Math.random() * 10 % MAX)];
-
-        return res;
-    }
-
-    public void drawBoard() {
-        System.out.println();
-
-        int spaceNum = 0;
-
-        // draw the grid row by row, column by column
+    public void drawBoard()
+    {
         for (int row = 0; row < spaces.length; row++) {
             for (int col = 0; col < spaces[0].length; col++) {
-                spaceNum++;
 
-                Space space = spaces[row][col];
-                if (space.getSymbol() == Space.BLANK) {
-                    spaces[row][col]=(randAlp(10));
-                }
-                System.out.print("|");
+                char[][] table = new char [row][col];
+                for (int r = 0; r < row; r++){
+                    for (int c = 0; c < col; c++){
+                        int number = (int) (Math.random() * 26) + 65;  //just move this line
+                        table[r][c] = (char) number;
+                        System.out.print(table[r][c] + " ");
+                    }//inner for loop
+                    System.out.println();
+                }//outer for loop
             }
-            System.out.println();
         }
 
     }
+
 }
 
