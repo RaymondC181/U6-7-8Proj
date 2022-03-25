@@ -2,10 +2,7 @@ import java.util.Scanner;
 public class Boggle {
 
     private LetterGrid board;
-    public Boggle()
-    {
-        setup();
-    }
+    public Boggle() {}
 
     public void setup()
     {
